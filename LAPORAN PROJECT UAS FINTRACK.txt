@@ -1,0 +1,115 @@
+Nama : Agata Febrianti Nadia Sa'o
+Nim  : 202312081
+
+
+📘 LAPORAN PROYEK APLIKASI FINTRACK
+
+A. Judul Proyek
+FinTrack – Aplikasi Pencatatan Keuangan Pribadi Berbasis Web
+
+
+B. Deskripsi Singkat Proyek
+FinTrack adalah aplikasi web yang membantu pengguna mencatat pemasukan dan pengeluaran harian, memantau grafik keuangan bulanan, serta mengekspor laporan dalam format pdf atau Excel.
+Aplikasi ini mendukung pengelolaan keuangan secara rapi dan terorganisir, terutama bagi pengguna yang ingin lebih disiplin dalam mengatur keuangan pribadi.
+
+
+C. Teknologi yang Digunakan
+
+Komponen                Teknologi
+Bahasa Pemrograman	PHP Native (versi 7.4 ke atas), HTML, CSS, JavaScript (Chart.js)
+Database	        MySQL (minimal versi 5.7)
+Framework CSS	        Bootstrap 5
+Ekspor PDF	        DomPDF
+Ekspor Excel	        Header CSV/XLS (tanpa library)
+Grafik	                Chart.js
+
+
+D. Struktur Folder
+
+/fintrack
+│
+├── config/              // File koneksi database
+├── css/                 // Gaya tampilan
+├── js/                  // Script Chart.js
+├── laporan/             // File laporan PDF & Excel
+├── pages/               // Halaman fitur
+├── auth/                // login, register
+├── sql/                 // Struktur database (SQL file)
+└── login.php            // Halaman utama / redirect
+
+
+E. Fitur Utama
+No	Fitur	                       Deskripsi
+1	Login & Register	       Autentikasi dengan session PHP
+2	Dashboard Ringkasan	       Menampilkan pemasukan, pengeluaran, grafik, dan reminder
+3	CRUD Pemasukan	               Tambah,ubah, hapus data pemasukan
+4	CRUD Pengeluaran	       Tambah, ubah, hapus data pengeluaran
+5	Laporan Gabungan	       Gabungan pemasukan & pengeluaran per bulan
+6	Export Laporan (PDF/XLS)       Ekspor data laporan sesuai bulan
+7	Grafik Keuangan Bulanan	       Visualisasi pemasukan & pengeluaran
+8	Ubah Password	               Pengaturan user login untuk ubah password
+9	Monitoring Aktivitas	       Melihat riwayat aktivitas pengguna (khusus admin)
+10	Pengaturan Sistem	       Mengelola setting aplikasi (admin-only)
+
+
+F. Struktur Database (10 Tabel)
+
+users                 : Menyimpan data user (id, username, password, role_id)
+
+roles                 : Level user (admin, user biasa)
+
+pemasukan             : Data pemasukan (id, jumlah, keterangan, kategori_id, tanggal)
+
+pengeluaran           : Data pengeluaran (id, jumlah, keterangan, kategori_id, tanggal)
+
+kategori_pemasukan    : Kategori untuk pemasukan
+
+kategori_pengeluaran  :  Kategori untuk pengeluaran
+
+aktivitas             :  Monitoring aktivitas user
+
+settings              : Pengaturan sistem
+
+metode_pembayaran     : Cash / QRIS / dll
+
+login_logs            : Log login pengguna (opsional jika disimpan terpisah)
+
+
+
+G. Cara Instalasi Aplikasi
+
+Persyaratan:
+
+Web server (XAMPP/Laragon)
+
+PHP 7.4+
+
+MySQL 5.7+
+
+Composer (untuk DomPDF)
+
+
+H. Langkah Instalasi:
+
+Anda dapat mengklik website berikut ini :https://orchid-grouse-923361.hostingersite.com/
+
+
+I. Panduan Penggunaan Aplikasi
+
+1). Login terlebih dahulu
+
+2). Gunakan menu navigasi: Tambah pemasukan/pengeluaran
+
+3). Lihat laporan di menu "Laporan Gabungan"
+
+4). Export PDF/Excel bila diperlukan
+
+5). Admin bisa membuka “Pengaturan” untuk:
+
+    Ubah password
+
+    Monitoring aktivitas
+
+    Konfigurasi sistem (nama app, dll)
+
+    User hanya diperkenankan untuk mengubah password saja
